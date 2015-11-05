@@ -12,7 +12,7 @@
     float: left;
 }
 
-/* ! create a "row" */
+/*  ! create a "row" */
 .multiSelect .line {
     padding:  2px 0px 4px 0px;
     min-height: 25px;
