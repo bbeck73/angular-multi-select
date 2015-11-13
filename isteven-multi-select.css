@@ -152,6 +152,29 @@
     padding: 0px 4px 0px 4px;
 }
 
+/* helper buttons (select all, none, reset); */
+.multiSelect .helperButtonNew {
+    position: absolute;
+    display: inline;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    height: 22px;
+    width: 22px;
+    font-size: 13px;
+    border-radius: 2px;
+    color: #666;
+    background-color: #f1f1f1;
+    line-height: 1.4;
+    right : 2px;
+    top: 4px;
+}
+
+.multiSelect .helperButtonNew.reset{
+    float: right;
+    padding: 0px 4px 0px 4px;
+}
+
 .multiSelect .helperButton:not( .reset ) {
     margin-right: 4px;    
 }
