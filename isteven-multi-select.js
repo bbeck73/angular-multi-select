@@ -508,7 +508,6 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                         }
                     }
                 }
-
                 // if an item (not group marker) is clicked
                 else {
 
@@ -529,7 +528,6 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                         // we then hide the checkbox layer
                         //$scope.toggleCheckboxes( e );
                     }
-
                     // Multiple
                     else {
                         var tickValue = ( typeof attrs.groupProperty === 'undefined' || ($scope.filteredModel[ index].expanded !== undefined && $scope.filteredModel[ index].expanded === true) );
@@ -537,7 +535,8 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                     }
 
                     // we refresh input model as well
-                    var inputModelIndex = $scope.filteredModel[ index ][ $scope.indexProperty ];
+                    // var inputModelIndex = $scope.filteredModel[ index ][ $scope.indexProperty ];
+                    var inputModelIndex = $scope.inputModel.indexOf( item );
                     $scope.inputModel[ inputModelIndex ][ $scope.tickProperty ] = $scope.filteredModel[ index ][ $scope.tickProperty ];
                 }
 
@@ -1167,14 +1166,14 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                     // container of the first 3 buttons, select all, none and reset
                     '<div class="line" ng-if="helperStatus.all || helperStatus.none || helperStatus.reset ">' +
                         // select all
-                        '<button type="button" class="helperButton" ' +
+                        '<button type="button" class="helperButton reset" ' +
                             'ng-disabled="isDisabled" ' +
                             'ng-if="helperStatus.all" ' +
                             'ng-click="select( \'all\', $event );" ' +
                             'ng-bind-html="lang.selectAll">' +
                         '</button>'+
                         // select none
-                        '<button type="button" class="helperButton" ' +
+                        '<button type="button" class="helperButton reset" ' +
                             'ng-disabled="isDisabled" ' +
                             'ng-if="helperStatus.none" ' +
                             'ng-click="select( \'none\', $event );" ' +
